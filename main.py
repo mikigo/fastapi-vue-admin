@@ -2,7 +2,7 @@ import os
 from typing import Union, Any
 
 import uvicorn
-from fastapi import FastAPI, Query, Path, Body, Cookie, Response, Header, status, Form
+from fastapi import FastAPI, Query, Path, Body, Cookie, Response, Header, status, Form, HTTPException
 from fastapi import File, UploadFile
 from pydantic import BaseModel, Field
 
@@ -130,6 +130,26 @@ async def create_file(file: bytes = File()):
 @app.post("/uploadfile/")
 async def create_upload_file(file: UploadFile):
     return {"filename": file.filename}
+
+
+names = {"one": "mikigo"}
+
+
+@app.get("/resp_info/{name_id}")
+async def resp_info(name_id: str):
+    if name_id not in names:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Item not found")
+    return {"item": names[name_id]}
+
+from fastapi.security import OAuth2PasswordBearer
+from fastapi import Depends
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+
+@app.get("/auth/")
+async def auth_test(token: str = Depends(oauth2_scheme)):
+    return {"token": token}
 
 
 if __name__ == '__main__':
