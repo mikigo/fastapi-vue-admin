@@ -2,7 +2,7 @@ import os
 from typing import Union, Any
 
 import uvicorn
-from fastapi import FastAPI, Query, Path, Body, Cookie, Response, Header, status, Form, HTTPException
+from fastapi import FastAPI, Query, Path, Body, Cookie, Response, Header, status, Form, HTTPException, Depends
 from fastapi import File, UploadFile
 from pydantic import BaseModel, Field
 
@@ -130,6 +130,17 @@ async def create_file(file: bytes = File()):
 @app.post("/uploadfile/")
 async def create_upload_file(file: UploadFile):
     return {"filename": file.filename}
+
+
+async def common_parameters(
+    q: Union[str, None] = None, skip: int = 0, limit: int = 100
+):
+    return {"q": q, "skip": skip, "limit": limit}
+
+
+@app.get("/dps")
+async def depends_test(commons: dict = Depends(common_parameters)):
+    return commons
 
 
 names = {"one": "mikigo"}
