@@ -1,23 +1,24 @@
 import uvicorn
 from fastapi import FastAPI
 
+import settings
 from router.hello import hello
 from router.user import user_router
-from setting.config import config
 
 app = FastAPI(
-    debug=config.DEBUG,
-    title=config.APP_NAME,
-    version=config.VERSION
+    debug=settings.DEBUG,
+    title=settings.APP_NAME,
+    version=settings.VERSION,
+    redoc_url=None,
 )
 
-app.include_router(hello)
-app.include_router(user_router)
+app.include_router(hello, prefix="/hello", tags=["Hello"])
+app.include_router(user_router, prefix="/user", tags=["用户"])
 
 if __name__ == '__main__':
     uvicorn.run(
         app="main:app",
-        host=config.IP,
-        port=config.PORT,
-        reload=config.RELOAD
+        host=settings.IP,
+        port=settings.PORT,
+        reload=settings.RELOAD
     )
