@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 # 导入SQLAlchemy模型和Pydantic模型
-from . import models, schemas
+from model.model import models, schemas
+
 
 def get_user(db: Session, user_id: int):
     """通过ID查询用户"""

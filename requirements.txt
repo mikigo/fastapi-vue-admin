@@ -1,0 +1,6 @@
+-i https://pypi.tuna.tsinghua.edu.cn/simple
+
+fastapi
+uvicorn[standard]
+sqlmodel
+# python-multipart

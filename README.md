@@ -1,14 +1,17 @@
-# fastapi-practice
+# feelgood
 安装:
 
 ```shell
-pip3 install fastapi
-# 安装 ASGI 服务器，用于启动服务
-pip3 install "uvicorn[standard]"
+pip3 install -r requirements.txt
 ```
 
 启动服务：
 
 ```shell
-uvicorn main:app --reload
+python3 main.py
+```
+
+接口文档：
+```djangourlpath
+${IP}:5000/docs
 ```

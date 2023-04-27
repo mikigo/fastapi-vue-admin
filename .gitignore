@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+.idea
+.vscode
 # Distribution / packaging
 .Python
 build/
@@ -110,11 +111,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder project setting
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope project setting
 .ropeproject
 
 # mkdocs documentation
