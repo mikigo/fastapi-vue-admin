@@ -1,6 +1,8 @@
 from fastapi import APIRouter
 from fastapi import HTTPException
 from fastapi import status
+from fastapi import Depends
+from fastapi.security import OAuth2PasswordBearer
 
 from model.sql_model.model import User
 from model.sql_model.model import create_user as _create_user
@@ -50,3 +52,11 @@ async def delete_user(name: str):
             status_code=status.HTTP_201_CREATED,
             detail="用户不存在，无法删除！"
         )
+
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+
+@user_router.get("/token")
+async def get_token(token: str = Depends(oauth2_scheme)):
+    return {"token": token}
