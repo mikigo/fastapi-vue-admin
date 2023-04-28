@@ -1,24 +1,12 @@
-from typing import Optional
-
-from sqlmodel import Field
 from sqlmodel import SQLModel
 from sqlmodel import Session
 from sqlmodel import create_engine
 from sqlmodel import select
 
 import settings
+from model.sql_model import User
 
 engine = create_engine(settings.SQLITE_URL, echo=True)
-
-
-class User(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    name: str = Field(index=True)
-    nickname: str
-    hashed_password: str
-    sex: Optional[str] = None
-    age: Optional[int] = None
-    disabled: bool = True
 
 
 def create_db_and_tables():
@@ -76,21 +64,3 @@ def delete_user(name: str):
         session.delete(res)
         session.commit()
         return True
-
-
-# if __name__ == '__main__':
-    # create_db_and_tables()
-    # create_user(
-    # update_user(
-    #     User(
-    #         name="mikigo",
-    #         nickname="mikigo",
-    #         hashed_password="123456",
-    #         sex="mail",
-    #         age="20",
-    #         disabled=False,
-    #
-    #     )
-    # )
-    # select_user()
-    # delete_user("http")

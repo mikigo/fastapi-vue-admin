@@ -5,11 +5,11 @@ from fastapi import status
 from fastapi.security import OAuth2PasswordBearer
 from fastapi.security import OAuth2PasswordRequestForm
 
-from model.sql.model import User
-from model.sql.model import create_user as _create_user
-from model.sql.model import delete_user as _delete_user
-from model.sql.model import select_user as _select_user
-from model.sql.model import update_user as _update_user
+from model.sql_model import User
+from view.user_view import create_user as _create_user
+from view.user_view import delete_user as _delete_user
+from view.user_view import select_user as _select_user
+from view.user_view import update_user as _update_user
 
 user_router = APIRouter()
 
@@ -85,7 +85,6 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
 
 
 def get_current_active_user(current_user: User = Depends(get_current_user)):
-    print(1111111111111111111111, current_user.disabled)
     if current_user.disabled:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -94,7 +93,7 @@ def get_current_active_user(current_user: User = Depends(get_current_user)):
     return current_user
 
 
-@user_router.post("/token") # 地址和oauth2_scheme保持一致
+@user_router.post("/token")  # 地址和oauth2_scheme保持一致
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     user = _select_user(form_data.username)
     if not user:

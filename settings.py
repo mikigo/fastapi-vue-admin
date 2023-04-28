@@ -25,5 +25,7 @@ SQLITE_URL = f"sqlite:///{STATIC_PATH}/{SQLITE_FILE_NAME}"
 # ====================== HOST SETTING ======================
 # Debug模式开启说明是在开发环境，使用127.0.0.1，Debug模式关闭正式环境，使用真实IP
 IP = popen("hostname -I").read().split(" ")[0] if not DEBUG else "127.0.0.1"
+# 端口
 PORT = 8000
+# 热重载
 RELOAD = True
