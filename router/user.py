@@ -14,7 +14,8 @@ from fastapi import status
 from fastapi.security import OAuth2PasswordRequestForm
 
 from model.sql_model import User
-from view.user_view import ACCESS_TOKEN_EXPIRE_MINUTES, oauth2_scheme
+from view.user_view import ACCESS_TOKEN_EXPIRE_MINUTES
+from view.user_view import oauth2_scheme
 from view.user_view import Token
 from view.user_view import authenticate_user
 from view.user_view import create_access_token_by_jwt
@@ -25,7 +26,7 @@ from view.user_view import get_current_active_user
 from view.user_view import select_user as _select_user
 from view.user_view import update_user as _update_user
 
-user_router = APIRouter()
+user_router = APIRouter(prefix="/user", tags=["用户"])
 
 
 @user_router.get("/query")

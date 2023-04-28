@@ -21,8 +21,15 @@ VERSION = "0.1"
 ROOT_DIR = dirname(abspath(__file__))
 # router目录绝对路径
 ROUTER_PATH = join(ROOT_DIR, "router")
-# static目录绝对路径
-STATIC_PATH = join(ROOT_DIR, "static")
+
+# 使用模板引擎，挂载静态文件目录
+TEMPLATE = "static"
+# API 文档用户界面描述
+DESC = f"""
+<img src="{TEMPLATE}/logo.png" width = "450" height = "200" align=left />
+"""
+# 静态文件目录绝对路径
+STATIC_PATH = join(ROOT_DIR, TEMPLATE)
 
 # ======================= DB SETTING =======================
 SQLITE_FILE_NAME = "feelgood.db"

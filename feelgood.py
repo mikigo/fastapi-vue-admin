@@ -7,6 +7,7 @@
 """
 import uvicorn
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 import settings
 from router.hello import hello
@@ -16,15 +17,23 @@ app = FastAPI(
     debug=settings.DEBUG,
     title=settings.APP_NAME,
     version=settings.VERSION,
+    description=settings.DESC,
     redoc_url=None,
 )
 
-app.include_router(hello, prefix="/hello", tags=["Hello"])
-app.include_router(user_router, prefix="/user", tags=["用户"])
+if settings.TEMPLATE:
+    app.mount(
+        f"/{settings.TEMPLATE}",
+        StaticFiles(directory=settings.TEMPLATE),
+        name=settings.TEMPLATE
+    )
+
+app.include_router(hello)
+app.include_router(user_router)
 
 if __name__ == '__main__':
     uvicorn.run(
-        app="main:app",
+        app="feelgood:app",
         host=settings.IP,
         port=settings.PORT,
         reload=settings.RELOAD

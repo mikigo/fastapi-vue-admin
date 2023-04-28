@@ -15,3 +15,6 @@ python-jose[cryptography]
 
 # 处理密码哈希，使用Bcrypt算法；
 passlib[bcrypt]
+
+# 模板引擎，（默认不安装）
+# jinja2

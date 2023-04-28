@@ -1,4 +1,4 @@
-![](./docs/.res/logo.png)
+![](static/logo.png)
 
 # FeelGood
 
@@ -13,7 +13,7 @@ pip3 install -r requirements.txt
 ## 启动服务
 
 ```shell
-python3 main.py
+python3 feelgood.py
 ```
 
 ## OpenAPI文档

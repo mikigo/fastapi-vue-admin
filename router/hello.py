@@ -6,10 +6,29 @@
 :Desc:
 """
 from fastapi import APIRouter
+from fastapi import Request
+from fastapi.templating import Jinja2Templates
+
+import settings
 
 hello = APIRouter()
 
+templates = Jinja2Templates(directory="static")
+
+hi = f"""
+Hey! I'm Mikigo.Welcome to use {settings.APP_NAME}.
+"""
+
+api_url = f"http://{settings.IP}:{settings.PORT}/docs"
+
 
 @hello.get("/")
-async def sayhello():
-    return {"msg": "Hello FeelGood! "}
+async def say_hello(request: Request):
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "hi": hi,
+            "api_url": api_url,
+        }
+    )
