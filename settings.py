@@ -9,6 +9,7 @@ from os import popen
 from os.path import abspath
 from os.path import dirname
 from os.path import join
+from datetime import datetime
 
 # ==================== PROJECT SETTING ====================
 # Debug 模式开启
@@ -26,14 +27,18 @@ ROUTER_PATH = join(ROOT_DIR, "router")
 TEMPLATE = "static"
 # API 文档用户界面描述
 DESC = f"""
-<img src="{TEMPLATE}/logo.png" width = "450" height = "200" align=left />
+![]({TEMPLATE}/logo.png)
+```shell
+Version: {VERSION}
+Author : mikigo
+```
 """
 # 静态文件目录绝对路径
 STATIC_PATH = join(ROOT_DIR, TEMPLATE)
 
 # ======================= DB SETTING =======================
-SQLITE_FILE_NAME = "feelgood.db"
-SQLITE_URL = f"sqlite:///{STATIC_PATH}/{SQLITE_FILE_NAME}"
+SQL_FILE_NAME = "feelgood.db"
+SQL_URL = f"sqlite:///{STATIC_PATH}/{SQL_FILE_NAME}"
 
 # ====================== HOST SETTING ======================
 # Debug模式开启说明是在开发环境，使用127.0.0.1，Debug模式关闭正式环境，使用真实IP

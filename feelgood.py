@@ -10,8 +10,8 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 import settings
-from router.hello import hello
-from router.user import user_router
+from apps.hello import hello
+from apps.user.router.user import user_router
 
 app = FastAPI(
     debug=settings.DEBUG,
