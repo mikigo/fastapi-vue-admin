@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+# _*_ coding:utf-8 _*_
+"""
+:Author: mikigo
+:Date: 2022/11/19 上午9:47
+:Desc:
+"""
 from os import popen
 from os.path import abspath
 from os.path import dirname
@@ -16,7 +23,6 @@ ROOT_DIR = dirname(abspath(__file__))
 ROUTER_PATH = join(ROOT_DIR, "router")
 # static目录绝对路径
 STATIC_PATH = join(ROOT_DIR, "static")
-
 
 # ======================= DB SETTING =======================
 SQLITE_FILE_NAME = "feelgood.db"

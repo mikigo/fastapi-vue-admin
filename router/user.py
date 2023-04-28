@@ -1,12 +1,18 @@
+#!/usr/bin/env python3
+# _*_ coding:utf-8 _*_
+"""
+:Author: mikigo
+:Date: 2022/11/19 上午9:47
+:Desc:
+"""
 from fastapi import APIRouter
 from fastapi import Depends
 from fastapi import HTTPException
 from fastapi import status
-from fastapi.security import OAuth2PasswordBearer
 from fastapi.security import OAuth2PasswordRequestForm
 
 from model.sql_model import User
-from view.user_view import create_user as _create_user
+from view.user_view import create_user as _create_user, oauth2_scheme, fake_hash_password, get_current_active_user
 from view.user_view import delete_user as _delete_user
 from view.user_view import select_user as _select_user
 from view.user_view import update_user as _update_user
@@ -55,42 +61,9 @@ async def delete_user(name: str):
         )
 
 
-# Oauth2 认证
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/user/token")
-
-
 @user_router.get("/oauth2_password_bearer")
 async def get_token(token: str = Depends(oauth2_scheme)):
     return {"token": token}
-
-
-def fake_hash_password(password: str):
-    return f"fakehashed{password}"
-
-
-def fake_decode_token(token: str):
-    user = _select_user(token)
-    return user
-
-
-def get_current_user(token: str = Depends(oauth2_scheme)):
-    user = fake_decode_token(token)
-    if not user:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid authentication credentials",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-    return user
-
-
-def get_current_active_user(current_user: User = Depends(get_current_user)):
-    if current_user.disabled:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="未激活的用户！"
-        )
-    return current_user
 
 
 @user_router.post("/token")  # 地址和oauth2_scheme保持一致

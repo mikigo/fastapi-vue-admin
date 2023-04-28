@@ -2,5 +2,13 @@
 
 fastapi
 uvicorn[standard]
+
+# Pydantic + SQLAlchemy 的ORM库
 sqlmodel
+
+# Form表单提交
 python-multipart
+
+# Python-jose 支持 PyJWT 的所有功能，还支持与其它工具集成时可能会用到的一些其它功能；
+# cryptography 是 Python-jose 配套的加密后端。
+python-jose[cryptography]
