@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 
 import settings
 from apps.hello import hello
-from apps.user.router.user import user_router
+from apps.user.router import user_router
 
 app = FastAPI(
     debug=settings.DEBUG,

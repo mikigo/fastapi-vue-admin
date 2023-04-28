@@ -5,11 +5,12 @@
 :Date: 2022/11/19 上午9:47
 :Desc:
 """
+from typing import Union
 
 from pydantic import BaseModel
 
 
-class UserBase(BaseModel):
+class Base(BaseModel):
     id: int
     name: str
     nickname: str
@@ -18,10 +19,23 @@ class UserBase(BaseModel):
     disabled: bool
 
 
-class UserCreate(UserBase):
+class UserCreate(Base):
     hashed_password: str
 
 
-class UserSchema(UserBase):
+class UserSchema(Base):
     class Config:
         orm_mode = True
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: Union[str, None] = None
+
+
+class UserInDB(UserSchema):
+    hashed_password: str

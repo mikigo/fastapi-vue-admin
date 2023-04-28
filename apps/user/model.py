@@ -14,11 +14,11 @@ from sqlalchemy import String
 from db import Base
 
 
-class User(Base):
+class UserModel(Base):
     __tablename__ = "user"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, unique=True)
+    name = Column(String, unique=True, index=True)
     nickname = Column(String)
     hashed_password = Column(String)
     sex = Column(String)

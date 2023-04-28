@@ -14,7 +14,7 @@ from sqlmodel import ForeignKey
 from sqlmodel import SQLModel
 
 
-# class User(SQLModel, table=True):
+# class UserSchema(SQLModel, table=True):
 #     """用户的数据库表"""
 #     id: Optional[int] = Field(default=None, primary_key=True)
 #     name: str = Field(index=True)
