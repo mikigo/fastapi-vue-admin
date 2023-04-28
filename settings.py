@@ -9,7 +9,6 @@ from os import popen
 from os.path import abspath
 from os.path import dirname
 from os.path import join
-from datetime import datetime
 
 # ==================== PROJECT SETTING ====================
 # Debug 模式开启
@@ -20,8 +19,6 @@ APP_NAME = "FeelGood"
 VERSION = "0.1"
 # 根目录绝对路径
 ROOT_DIR = dirname(abspath(__file__))
-# router目录绝对路径
-ROUTER_PATH = join(ROOT_DIR, "router")
 
 # 使用模板引擎，挂载静态文件目录
 TEMPLATE = "static"

@@ -13,8 +13,6 @@ from sqlmodel import Text
 from sqlmodel import ForeignKey
 from sqlmodel import SQLModel
 
-from sqlalchemy.orm import mapped_column
-
 
 # class User(SQLModel, table=True):
 #     """用户的数据库表"""
