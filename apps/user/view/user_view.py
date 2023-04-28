@@ -11,13 +11,15 @@ from apps.user.sql_model import model
 from sqlalchemy.orm import Session
 
 
+def get_users(db: Session, user_id: int = None):
+    if user_id:
+        return db.query(model.User).filter(model.User.id == user_id).one_or_none()
+    return db.query(model.User).all()
 
-
-def get_user(db: Session, user_id: int):
-    return db.query(model.User).filter(model.User.id == user_id).first()
 
 if __name__ == '__main__':
     from db import SessionLocal
+
     db = SessionLocal()
-    a = get_user(db, 1)
-    print(a)
+    user = get_users(db)
+    print(user)
