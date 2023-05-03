@@ -2,7 +2,7 @@
 
 # FeelGood
 
-使用 FastAPI 构建一个数据管理后端系统
+使用 FastAPI + SQLAchemy 构建一个数据管理后端系统
 
 ## 安装依赖
 
@@ -14,6 +14,12 @@ pip3 install -r requirements.txt
 
 ```shell
 python3 feelgood.py
+```
+
+或者
+
+```shell
+uvicorn feelgood:app --reload
 ```
 
 ## OpenAPI文档
