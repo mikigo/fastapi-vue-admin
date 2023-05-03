@@ -16,3 +16,6 @@ passlib[bcrypt]
 
 # 模板引擎
 jinja2
+
+# 数据库迁移工具
+alembic

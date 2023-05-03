@@ -67,7 +67,7 @@ def read_item(
         *,
         db: Session = Depends(deps.get_db),
         id: int,
-        current_user: models.User = Depends(deps.get_current_active_user),
+        # current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
     """
     Get item by ID.
@@ -75,8 +75,8 @@ def read_item(
     item = crud.item.get(db=db, id=id)
     if not item:
         raise HTTPException(status_code=404, detail="Item not found")
-    if not crud.user.is_superuser(current_user) and (item.owner_id != current_user.id):
-        raise HTTPException(status_code=400, detail="Not enough permissions")
+    # if not crud.user.is_superuser(current_user) and (item.owner_id != current_user.id):
+    #     raise HTTPException(status_code=400, detail="Not enough permissions")
     return item
 
 
