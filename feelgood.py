@@ -10,8 +10,8 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 import settings
-from apps.hello import hello
-from apps.user.router import user_router
+from app.hello import hello
+from app.api.api import api_router
 
 app = FastAPI(
     debug=settings.DEBUG,
@@ -29,7 +29,7 @@ if settings.TEMPLATE:
     )
 
 app.include_router(hello)
-app.include_router(user_router)
+app.include_router(api_router)
 
 if __name__ == '__main__':
     uvicorn.run(

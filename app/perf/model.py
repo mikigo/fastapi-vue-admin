@@ -7,11 +7,11 @@
 """
 from typing import Optional
 
-from sqlmodel import Field
 from sqlmodel import DateTime
-from sqlmodel import Text
+from sqlmodel import Field
 from sqlmodel import ForeignKey
 from sqlmodel import SQLModel
+from sqlmodel import Text
 
 
 # class UserSchema(SQLModel, table=True):
