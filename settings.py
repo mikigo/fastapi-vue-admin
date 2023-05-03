@@ -43,7 +43,7 @@ STATIC_PATH = join(ROOT_DIR, TEMPLATE)
 DB_URL = f"sqlite:///{STATIC_PATH}/feelgood.db"
 
 # ====================== HOST SETTING ======================
-# Debug模式开启说明是在开发环境，使用127.0.0.1，Debug模式关闭正式环境，使用真实IP
+# Debug模式开启使用127.0.0.1，Debug模式关闭正式环境，使用真实IP
 IP = popen("hostname -I").read().split(" ")[0] if not DEBUG else "127.0.0.1"
 # 端口
 PORT = 8000
@@ -56,8 +56,10 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 24 * 60
 # 跨域白名单
 BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [f"http://localhost:{PORT}"]
 
+# Oauth2的API
 API_V1_STR: str = "/api/v1"
+# 超级用户
 FIRST_SUPERUSER = "admin"
 FIRST_SUPERUSER_PASSWORD = "admin"
-
+# JWT编码算法
 ALGORITHM = "HS256"
