@@ -14,7 +14,6 @@ const name = defaultSettings.title // page title
 // You can change the port by the following methods:
 // port = 9528 npm run dev OR npm run dev --port = 9528
 // const port = process.env.port || process.env.npm_config_port || 9528 // dev port
-const port = 8000 // dev port
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
@@ -27,11 +26,11 @@ module.exports = {
    */
   publicPath: '/admin',
   outputDir: 'dist',
-  assetsDir: 'static',
+  assetsDir: 'assets',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
-    port: port,
+    port: process.env.port || process.env.npm_config_port || 9528,
     open: true,
     overlay: {
       warnings: false,
@@ -41,7 +40,7 @@ module.exports = {
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
-    // it can be accessed in hello.html to inject the correct title.
+    // it can be accessed in index.html to inject the correct title.
     name: name,
     resolve: {
       alias: {

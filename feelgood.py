@@ -11,6 +11,7 @@ from fastapi.staticfiles import StaticFiles
 
 import settings
 from app.hello import hello
+from app.fadmin import fadmin
 from app.api.api import api_router
 
 app = FastAPI(
@@ -29,6 +30,7 @@ if settings.TEMPLATE:
     )
 
 app.include_router(hello)
+app.include_router(fadmin)
 app.include_router(api_router)
 
 if __name__ == '__main__':

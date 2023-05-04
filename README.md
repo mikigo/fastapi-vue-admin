@@ -30,11 +30,19 @@ uvicorn feelgood:app --reload
 127.0.0.1:8000/docs
 ```
 
-数据库迁移：
+## 数据库迁移：
 ```shell
 # 自动生成迁移文件
 alembic revision --autogenerate -m "描述"
 # 执行迁移
 alembic upgrade head
+```
+
+## admin前端打包：
+
+```shell
+cd fadmin
+npm install --registry=https://registry.npm.taobao.org
+npm run build:prod
 ```
 
