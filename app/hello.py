@@ -25,7 +25,7 @@ api_url = f"http://{settings.IP}:{settings.PORT}/docs"
 @hello.get("/")
 async def say_hello(request: Request):
     return templates.TemplateResponse(
-        "index.html",
+        "hello.html",
         {
             "request": request,
             "hi": hi,
