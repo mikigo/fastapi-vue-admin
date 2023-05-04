@@ -1,8 +1,8 @@
 ![](static/logo.png)
 
-# FeelGood
+# FeelGood（FastAPI-Xadmin）
 
-使用 FastAPI + SQLAchemy 构建一个数据管理后端系统
+使用 FastAPI + SQLAchemy  + Vue + Element UI 构建的后台管理系统。
 
 ## 安装依赖
 
@@ -27,10 +27,10 @@ uvicorn feelgood:app --reload
 开发环境：
 
 ```shell
-127.0.0.1:8000/docs
+IP:8000/docs
 ```
 
-## 数据库迁移：
+## 数据库迁移
 ```shell
 # 自动生成迁移文件
 alembic revision --autogenerate -m "描述"
@@ -38,11 +38,21 @@ alembic revision --autogenerate -m "描述"
 alembic upgrade head
 ```
 
-## admin前端打包：
+## Admin前端
+
+开发环境：
+
+```python
+cd fadmin
+# 安装依赖
+npm install --registry=https://registry.npm.taobao.org
+# 启动开发环境
+npm run dev
+```
+
+打包：
 
 ```shell
-cd fadmin
-npm install --registry=https://registry.npm.taobao.org
 npm run build:prod
 ```
 
