@@ -1,7 +1,7 @@
 .tag_a {
     color: white;
 }
-h2 {
+.title2 {
     color: white;
 }
 
@@ -9,10 +9,8 @@ h2 {
     height: 150px;
     width: 400px;
     text-align: center;
-    filter: brightness(600%);
-    -webkit-filter: brightness(600%);
-    filter: drop-shadow(5px 5px 2px #f0f0f0);
-    -webkit-filter: drop-shadow(5px 5px 2px #f0f0f0);
+    filter: brightness(400%) drop-shadow(5px 5px 2px #f0f0f0);
+    -webkit-filter: brightness(400%) drop-shadow(5px 5px 2px #f0f0f0);
 }
 
 .box {

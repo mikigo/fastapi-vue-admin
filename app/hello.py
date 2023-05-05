@@ -18,7 +18,6 @@ templates = Jinja2Templates(directory="static")
 hi = f"""
 Hey! I'm Mikigo. Welcome to use {settings.APP_NAME} {settings.VERSION}.
 """
-
 api_url = f"http://{settings.IP}:{settings.PORT}/docs"
 admin_url = f"http://{settings.IP}:{settings.PORT}/admin"
 about_url = "https://github.com/mikigo/feelgood"
@@ -31,6 +30,7 @@ async def say_hello(request: Request):
         "hello.html",
         {
             "request": request,
+            "title": "Welcome",
             "hi": hi,
             "api_url": api_url,
             "admin_url": admin_url,

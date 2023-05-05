@@ -6,9 +6,33 @@
 
 ## 安装依赖
 
+系统环境：deepin-20.9
+
+提供多种环境安装方式；
+
+（1）本机安装：
+
 ```shell
 pip3 install -r requirements.txt
 ```
+
+（2）Python 虚拟环境安装：
+
+- pipenv
+
+  ```shell
+  pipenv install
+  ```
+
+- poetry
+
+  ```shell
+  poetry install
+  ```
+
+（3）Docker
+
+- 待定。。
 
 ## 启动服务
 
@@ -21,6 +45,8 @@ python3 feelgood.py
 ```shell
 uvicorn feelgood:app --reload
 ```
+
+服务启动之后根据终端提示在浏览器访问；
 
 ## OpenAPI文档
 
@@ -38,7 +64,7 @@ alembic revision --autogenerate -m "描述"
 alembic upgrade head
 ```
 
-## Admin前端
+## 后台管理系统
 
 开发环境：
 

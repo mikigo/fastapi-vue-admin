@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>{{ title }}</title>
     <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
     <link rel="shortcut  icon" href="{{ url_for('static', path='/favicon.ico') }}" type="image/x-icon" />
 </head>
@@ -11,13 +11,13 @@
 
     <div class="box">
         <img src="{{ url_for('static', path='/logo.png') }}" class="logo"/>
-        <h2>{{ hi }}</h2>
+        <h2 class="title2">{{ hi }}</h2>
         <br>
-        <h2>OpenAPI文档:</h2>
+        <h2 class="title2">OpenAPI文档:</h2>
         <a href="{{ api_url }}" target="_blank" class="tag_a">{{ api_url }}</a>
-        <h2>后台管理系统:</h2>
+        <h2 class="title2">后台管理系统:</h2>
         <a href="{{ admin_url }}" target="_blank" class="tag_a">{{ admin_url }}</a>
-        <h2>更多说明:</h2>
+        <h2 class="title2">更多说明:</h2>
         <a href="{{ about_url }}" target="_blank" class="tag_a">{{ about_url }}</a>
     </div>
 </div>

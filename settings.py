@@ -18,7 +18,7 @@ from pydantic import AnyHttpUrl
 # Debug 模式开启
 
 
-DEBUG = True
+DEBUG = False
 # 应用名称
 APP_NAME = "FeelGood"
 # 应用版本
