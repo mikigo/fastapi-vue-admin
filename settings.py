@@ -22,7 +22,7 @@ DEBUG = True
 # 应用名称
 APP_NAME = "FeelGood"
 # 应用版本
-VERSION = "V1"
+VERSION = "v1"
 # 根目录绝对路径
 ROOT_DIR = dirname(abspath(__file__))
 

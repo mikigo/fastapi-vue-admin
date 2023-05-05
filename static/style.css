@@ -1,3 +1,28 @@
+.tag_a {
+    color: white;
+}
 h2 {
-    color: green;
+    color: white;
+}
+
+.logo {
+    height: 150px;
+    width: 400px;
+    text-align: center;
+    filter: brightness(600%);
+    -webkit-filter: brightness(600%);
+    filter: drop-shadow(5px 5px 2px #f0f0f0);
+    -webkit-filter: drop-shadow(5px 5px 2px #f0f0f0);
+}
+
+.box {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 0;
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    margin: auto;
+    border: #1f2d3d;
 }

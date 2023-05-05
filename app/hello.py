@@ -16,10 +16,13 @@ hello = APIRouter()
 templates = Jinja2Templates(directory="static")
 
 hi = f"""
-Hey! I'm Mikigo.Welcome to use {settings.APP_NAME}.
+Hey! I'm Mikigo. Welcome to use {settings.APP_NAME} {settings.VERSION}.
 """
 
 api_url = f"http://{settings.IP}:{settings.PORT}/docs"
+admin_url = f"http://{settings.IP}:{settings.PORT}/admin"
+about_url = "https://github.com/mikigo/feelgood"
+background_img = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA12rZ8k.img"
 
 
 @hello.get("/")
@@ -30,5 +33,8 @@ async def say_hello(request: Request):
             "request": request,
             "hi": hi,
             "api_url": api_url,
+            "admin_url": admin_url,
+            "about_url": about_url,
+            "background_img": background_img,
         }
     )

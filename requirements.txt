@@ -7,8 +7,8 @@ pydantic[email]
 # Form表单提交；
 python-multipart
 
-# Python-jose 支持 PyJWT 的所有功能，还支持与其它工具集成时可能会用到的一些其它功能；
-# cryptography 是 Python-jose 配套的加密后端。
+# Python-jose支持PyJWT的所有功能，还支持与其它工具集成时可能会用到的一些其它功能；
+# cryptography是Python-jose 配套的加密后端。
 python-jose[cryptography]
 
 # 处理密码哈希，使用Bcrypt算法；
