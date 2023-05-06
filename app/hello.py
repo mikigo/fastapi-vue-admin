@@ -21,7 +21,6 @@ Hey! I'm Mikigo. Welcome to use {settings.APP_NAME} {settings.VERSION}.
 api_url = f"http://{settings.IP}:{settings.PORT}/docs"
 admin_url = f"http://{settings.IP}:{settings.PORT}/admin"
 about_url = "https://github.com/mikigo/feelgood"
-background_img = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAOEiEk.img"
 
 
 @hello.get("/")
@@ -35,6 +34,5 @@ async def say_hello(request: Request):
             "api_url": api_url,
             "admin_url": admin_url,
             "about_url": about_url,
-            "background_img": background_img,
         }
     )

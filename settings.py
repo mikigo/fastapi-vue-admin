@@ -15,8 +15,6 @@ from pydantic import AnyHttpUrl
 
 # ==================== PROJECT SETTING ====================
 # Debug 模式开启
-
-
 DEBUG = False
 # 应用名称
 APP_NAME = "FeelGood"
@@ -24,7 +22,6 @@ APP_NAME = "FeelGood"
 VERSION = "v1"
 # 根目录绝对路径
 ROOT_DIR = dirname(abspath(__file__))
-
 # 使用模板引擎，挂载静态文件目录
 TEMPLATE = "static"
 # API 文档用户界面描述
