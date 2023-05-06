@@ -21,7 +21,7 @@ Hey! I'm Mikigo. Welcome to use {settings.APP_NAME} {settings.VERSION}.
 api_url = f"http://{settings.IP}:{settings.PORT}/docs"
 admin_url = f"http://{settings.IP}:{settings.PORT}/admin"
 about_url = "https://github.com/mikigo/feelgood"
-background_img = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA12rZ8k.img"
+background_img = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAOEiEk.img"
 
 
 @hello.get("/")

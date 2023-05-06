@@ -1,21 +1,28 @@
 .tag_a {
     color: white;
 }
+
 .title2 {
     color: white;
+}
+
+.hi {
+    font-size: 20px;
 }
 
 .logo {
     height: 150px;
     width: 400px;
     text-align: center;
-    filter: brightness(400%) drop-shadow(5px 5px 2px #f0f0f0);
-    -webkit-filter: brightness(400%) drop-shadow(5px 5px 2px #f0f0f0);
+    /*filter: brightness(400%);*/
+    /*-webkit-filter: brightness(400%);*/
+    filter: brightness(400%) drop-shadow(4px 4px 1px #f0f0f0);
+    -webkit-filter: brightness(400%) drop-shadow(4px 4px 1px #f0f0f0);
 }
 
 .box {
     width: 500px;
-    height: 500px;
+    height: 1000px;
     position: relative;
     top: 0;
     /*bottom: 0;*/

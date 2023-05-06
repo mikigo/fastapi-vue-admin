@@ -6,7 +6,6 @@
 :Desc:
 """
 import secrets
-from os import popen
 from os.path import abspath
 from os.path import dirname
 from os.path import join
@@ -44,7 +43,7 @@ DB_URL = f"sqlite:///{STATIC_PATH}/feelgood.db"
 
 # ====================== HOST SETTING ======================
 # Debug模式开启使用127.0.0.1，Debug模式关闭正式环境，使用真实IP
-IP = popen("hostname -I").read().split(" ")[0] if not DEBUG else "127.0.0.1"
+IP = "0.0.0.0" if not DEBUG else "127.0.0.1"
 # 端口
 PORT = 8000
 # 热重载
