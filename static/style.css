@@ -11,13 +11,16 @@
 }
 
 .logo {
-    height: 150px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
     width: 400px;
-    text-align: center;
+    /*text-align: center;*/
     /*filter: brightness(400%);*/
     /*-webkit-filter: brightness(400%);*/
-    filter: brightness(400%) drop-shadow(4px 4px 1px #f0f0f0);
-    -webkit-filter: brightness(400%) drop-shadow(4px 4px 1px #f0f0f0);
+    /*filter: brightness(400%) drop-shadow(4px 4px 1px #f0f0f0);*/
+    /*-webkit-filter: brightness(400%) drop-shadow(4px 4px 1px #f0f0f0);*/
 }
 
 .box {
@@ -28,6 +31,7 @@
     /*bottom: 0;*/
     /*left: 0;*/
     /*right: 0;*/
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border: #1f2d3d;
 }

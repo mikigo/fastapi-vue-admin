@@ -32,7 +32,7 @@ Author : mikigo
 ```
 """
 # 静态文件目录绝对路径
-STATIC_PATH = join(ROOT_DIR, TEMPLATE)
+STATIC_PATH = join(ROOT_DIR, "static")
 
 # ======================= DB SETTING =======================
 DB_URL = f"sqlite:///{STATIC_PATH}/db.sqlite3"
