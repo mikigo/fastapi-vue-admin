@@ -1,12 +1,8 @@
-![](static/logo.png)
-
-# FeelGood（FastAPI-Xadmin）
+# fastapi-vue-admin
 
 使用 FastAPI + SQLAchemy  + Vue + Element UI 构建的后台管理系统。
 
 ## 安装依赖
-
-系统环境：deepin-20.9
 
 提供多种环境安装方式；
 
@@ -37,13 +33,13 @@ pip3 install -r requirements.txt
 ## 启动服务
 
 ```shell
-python3 feelgood.py
+python3 main.py
 ```
 
 或者
 
 ```shell
-uvicorn feelgood:app --reload
+uvicorn main:app --reload
 ```
 
 服务启动之后根据终端提示在浏览器访问；

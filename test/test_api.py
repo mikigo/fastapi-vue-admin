@@ -10,7 +10,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from feelgood import app
+from main import app
 
 from fastapi.testclient import TestClient
 

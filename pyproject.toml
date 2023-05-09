@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "feelgood"
+name = "fastapi-vue-admin"
 version = "0.1.0"
 description = ""
 authors = ["mikigo <huangmingqiang@uniontech.com>"]

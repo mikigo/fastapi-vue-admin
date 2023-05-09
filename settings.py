@@ -15,18 +15,17 @@ from pydantic import AnyHttpUrl
 
 # ==================== PROJECT SETTING ====================
 # Debug 模式开启
-DEBUG = False
+DEBUG = True
 # 应用名称
-APP_NAME = "FeelGood"
+APP_NAME = "fastapi-vue-admin"
 # 应用版本
 VERSION = "v1"
 # 根目录绝对路径
 ROOT_DIR = dirname(abspath(__file__))
 # 使用模板引擎，挂载静态文件目录
-TEMPLATE = "static"
 # API 文档用户界面描述
 DESC = f"""
-![]({TEMPLATE}/logo.png)
+![](static/logo.png)
 ```shell
 Version: {VERSION}
 Author : mikigo
@@ -36,13 +35,13 @@ Author : mikigo
 STATIC_PATH = join(ROOT_DIR, TEMPLATE)
 
 # ======================= DB SETTING =======================
-DB_URL = f"sqlite:///{STATIC_PATH}/feelgood.db"
+DB_URL = f"sqlite:///{STATIC_PATH}/db.sqlite3"
 
 # ====================== HOST SETTING ======================
 # Debug模式开启使用127.0.0.1，Debug模式关闭正式环境，使用真实IP
 IP = "0.0.0.0" if not DEBUG else "127.0.0.1"
 # 端口
-PORT = 8000
+PORT = 8001
 # 热重载
 RELOAD = True
 # openssl rand -hex 32 随机生成
