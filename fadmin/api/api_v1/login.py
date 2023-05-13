@@ -6,15 +6,15 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 import settings
-from apps import crud, models, schemas
-from apps.api import deps
-from apps.utils import get_password_hash
-from apps.utils import (
+from fadmin import crud, models, schemas
+from fadmin.api import deps
+from fadmin.utils import get_password_hash
+from fadmin.utils import (
     # generate_password_reset_token,
     # send_reset_password_email,
     verify_password_reset_token,
 )
-from apps.utils import create_access_token
+from fadmin.utils import create_access_token
 
 router = APIRouter()
 

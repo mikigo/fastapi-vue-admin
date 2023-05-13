@@ -18,6 +18,7 @@ from pydantic import AnyHttpUrl
 DEBUG = True
 # 应用名称
 APP_NAME = "fastapi-vue-admin"
+AUTHOR = "mikigo"
 # 应用版本
 VERSION = "v1"
 # 根目录绝对路径
@@ -25,10 +26,9 @@ ROOT_DIR = dirname(abspath(__file__))
 # 使用模板引擎，挂载静态文件目录
 # API 文档用户界面描述
 DESC = f"""
-![](static/logo.png)
 ```shell
 Version: {VERSION}
-Author : mikigo
+Author : {AUTHOR}
 ```
 """
 # 静态文件目录绝对路径

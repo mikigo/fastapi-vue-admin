@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 
 import settings
-from apps import crud, schemas
-from apps.db import base  # noqa: F401
+from fadmin import crud, schemas
+from fadmin.db import base  # noqa: F401
 
 
 # make sure all SQL Alchemy models are imported (apps.db.base) before initializing DB
@@ -31,10 +31,10 @@ if __name__ == '__main__':
     # from apps.db.session import engine
     # Base.metadata.create_all(bind=engine)
 
-    from apps.crud.crud_user import CRUDUser
-    from apps.db.session import SessionLocal
-    from apps.schemas.user import UserCreate
-    from apps.models.user import User
+    from fadmin.crud.crud_user import CRUDUser
+    from fadmin.db.session import SessionLocal
+    from fadmin.schemas.user import UserCreate
+    from fadmin.models.user import User
 
     db = SessionLocal()
     CRUDUser(User).create(

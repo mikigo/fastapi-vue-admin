@@ -75,6 +75,6 @@ npm run dev
 打包：
 
 ```shell
-npm run build:prod
+npm run build
 ```
 

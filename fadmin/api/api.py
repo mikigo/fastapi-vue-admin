@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from apps.api.api_v1 import login, users, utils, items
+from fadmin.api.api_v1 import login, users, utils, items
 
 api_router = APIRouter()
 api_router.include_router(login.router, tags=["login"])

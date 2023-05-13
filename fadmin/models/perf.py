@@ -1,4 +1,4 @@
-from apps.db.base_class import Base
+from fadmin.db.base_class import Base
 from datetime import datetime
 from sqlalchemy import Column, String, DateTime, Integer, ForeignKey, Boolean, Float
 

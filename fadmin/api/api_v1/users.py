@@ -6,8 +6,8 @@ from pydantic.networks import EmailStr
 from sqlalchemy.orm import Session
 
 import settings
-from apps import crud, models, schemas
-from apps.api import deps
+from fadmin import crud, models, schemas
+from fadmin.api import deps
 
 # from apps.utils import send_new_account_email
 
