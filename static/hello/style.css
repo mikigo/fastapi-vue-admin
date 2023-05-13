@@ -11,11 +11,11 @@
 }
 
 .logo {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 220px;
-    width: 400px;
+    margin-top: 100px;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*height: 220px;*/
+    /*width: 400px;*/
     /*text-align: center;*/
     /*filter: brightness(400%);*/
     /*-webkit-filter: brightness(400%);*/
@@ -25,7 +25,7 @@
 
 .box {
     width: 500px;
-    height: 1000px;
+    height: 800px;
     position: relative;
     top: 0;
     /*bottom: 0;*/

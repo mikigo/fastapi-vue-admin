@@ -25,12 +25,7 @@ VERSION = "v1"
 ROOT_DIR = dirname(abspath(__file__))
 # 使用模板引擎，挂载静态文件目录
 # API 文档用户界面描述
-DESC = f"""
-```shell
-Version: {VERSION}
-Author : {AUTHOR}
-```
-"""
+DESC = ""
 # 静态文件目录绝对路径
 STATIC_PATH = join(ROOT_DIR, "static")
 

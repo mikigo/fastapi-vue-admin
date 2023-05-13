@@ -16,7 +16,7 @@ hello = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
 hi = f"""
-Hey! I'm Mikigo. Welcome to use {settings.APP_NAME} {settings.VERSION}.
+Hey! I'm {settings.AUTHOR.title()}.Welcome to use {settings.APP_NAME} ({settings.VERSION}).
 """
 api_url = f"http://{settings.IP}:{settings.PORT}/docs"
 admin_url = f"http://{settings.IP}:{settings.PORT}/admin"
