@@ -10,9 +10,9 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 import settings
-from fadmin.hello import hello
-from fadmin.fadmin import fadmin
-from fadmin.api.api import api_router
+from backend.hello import hello
+from backend.fadmin import fadmin
+from backend.api.api import api_router
 
 app = FastAPI(
     debug=settings.DEBUG,

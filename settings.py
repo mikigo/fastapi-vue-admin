@@ -30,13 +30,13 @@ DESC = ""
 STATIC_PATH = join(ROOT_DIR, "static")
 
 # ======================= DB SETTING =======================
-DB_URL = f"sqlite:///{STATIC_PATH}/db.sqlite3"
+DB_URL = f"sqlite:///{ROOT_DIR}/db.sqlite3"
 
 # ====================== HOST SETTING ======================
 # Debug模式开启使用127.0.0.1，Debug模式关闭正式环境，使用真实IP
 IP = "0.0.0.0" if not DEBUG else "127.0.0.1"
 # 端口
-PORT = 8001
+PORT = 8000
 # 热重载
 RELOAD = True
 # openssl rand -hex 32 随机生成

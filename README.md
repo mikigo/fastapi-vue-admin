@@ -65,7 +65,7 @@ alembic upgrade head
 开发环境：
 
 ```python
-cd fadmin
+cd frontend
 # 安装依赖
 npm install --registry=https://registry.npm.taobao.org
 # 启动开发环境
