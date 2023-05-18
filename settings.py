@@ -36,11 +36,11 @@ DB_URL = f"sqlite:///{ROOT_DIR}/db.sqlite3"
 # Debug模式开启使用127.0.0.1，Debug模式关闭正式环境，使用真实IP
 IP = "0.0.0.0" if not DEBUG else "127.0.0.1"
 # 端口
-PORT = 8000
+PORT = 8001
 # 热重载
 RELOAD = True
 # openssl rand -hex 32 随机生成
-SECRET_KEY = secrets.token_urlsafe(32)
+JWT_SECRET_KEY = secrets.token_urlsafe(32)
 # token过期时间
 ACCESS_TOKEN_EXPIRE_MINUTES = 24 * 60
 # 跨域白名单

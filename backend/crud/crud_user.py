@@ -9,8 +9,8 @@ from backend.schemas.user import UserCreate, UserUpdate
 
 
 class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
-    def get_by_name(self, db: Session, *, name: str) -> Optional[User]:
-        return db.query(User).filter(User.full_name == name).first()
+    def get_by_name(self, db: Session, *, username: str) -> Optional[User]:
+        return db.query(User).filter(User.full_name == username).first()
 
     def create(self, db: Session, *, obj_in: UserCreate) -> User:
         db_obj = User(
@@ -37,8 +37,8 @@ class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
             update_data["hashed_password"] = hashed_password
         return super().update(db, db_obj=db_obj, obj_in=update_data)
 
-    def authenticate(self, db: Session, *, name: str, password: str) -> Optional[User]:
-        user = self.get_by_name(db, name=name)
+    def authenticate(self, db: Session, *, username: str, password: str) -> Optional[User]:
+        user = self.get_by_name(db, username=username)
         if not user:
             return None
         if not verify_password(password, user.hashed_password):
