@@ -47,7 +47,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 24 * 60
 BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [f"http://localhost:{PORT}"]
 
 # Oauth2的API
-API_V1_STR: str = "/api/v1"
+API_V1_STR: str = "/api"
 # 超级用户
 FIRST_SUPERUSER = "admin"
 FIRST_SUPERUSER_PASSWORD = "admin"

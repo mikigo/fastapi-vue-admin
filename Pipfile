@@ -10,13 +10,13 @@ name = "pypitunatsinghuaedu"
 
 [packages]
 fastapi = "*"
-uvicorn = {extras = ["standard"], version = "*"}
-pydantic = {extras = ["email"], version = "*"}
 python-multipart = "*"
-python-jose = {extras = ["cryptography"], version = "*"}
-passlib = {extras = ["bcrypt"], version = "*"}
 jinja2 = "*"
 alembic = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+pydantic = {extras = ["email"], version = "*"}
+python-jose = {extras = ["cryptography"], version = "*"}
+passlib = {extras = ["bcrypt"], version = "*"}
 
 [dev-packages]
 

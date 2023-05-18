@@ -19,7 +19,7 @@ from backend.utils import create_access_token
 router = APIRouter()
 
 
-@router.post(f"{settings.API_V1_STR}/login/access-token", response_model=schemas.Token)
+@router.post(f"{settings.API_V1_STR}/token", response_model=schemas.Token)
 def login_access_token(
         db: Session = Depends(deps.get_db), form_data: OAuth2PasswordRequestForm = Depends()
 ) -> Any:
@@ -44,12 +44,12 @@ def login_access_token(
     }
 
 
-@router.post("/login/test-token", response_model=schemas.User)
-def test_token(current_user: models.User = Depends(deps.get_current_user)) -> Any:
-    """
-    Test access token
-    """
-    return current_user
+# @router.post("/api/test-token", response_model=schemas.User)
+# def test_token(current_user: models.User = Depends(deps.get_current_user)) -> Any:
+#     """
+#     Test access token
+#     """
+#     return current_user
 
 
 # @router.post("/password-recovery/{email}", response_model=schemas.Msg)

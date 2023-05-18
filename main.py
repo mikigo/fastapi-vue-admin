@@ -8,11 +8,12 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 import settings
 from backend.hello import hello
 from backend.fadmin import fadmin
-from backend.api.api import api_router
+from backend.api.apis import api_router
 
 app = FastAPI(
     debug=settings.DEBUG,
@@ -27,6 +28,18 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(hello)
 app.include_router(fadmin)
 app.include_router(api_router)
+
+# define CORS settings
+origins = ["*"]
+
+# configure CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 
